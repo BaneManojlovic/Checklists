@@ -43,7 +43,7 @@ class ChecklistViewController: UITableViewController {
         items.append(item5)
     }
     
-    // MARK: - Added exta methods
+    // MARK: - Added extra methods
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
@@ -57,6 +57,19 @@ class ChecklistViewController: UITableViewController {
         }
     }
 
+    // MARK: - Action methods
+    @IBAction func addItem() {
+        debugPrint("Add button tapped ...")
+        
+        let newRowIndex = items.count
+        let item = ChecklistItem()
+        item.text = "I am a new row"
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+    }
 }
 
 // MARK: - TableView data source
