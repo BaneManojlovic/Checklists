@@ -77,11 +77,10 @@
 		9A4A9BE2229A6CD2004A8CF1 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
-				9A4A9BE3229A6CD2004A8CF1 /* AppDelegate.swift */,
-				9A4A9BE5229A6CD2004A8CF1 /* ViewController.swift */,
-				9A4A9BE7229A6CD2004A8CF1 /* Main.storyboard */,
-				9A4A9BEA229A6CD3004A8CF1 /* Assets.xcassets */,
-				9A4A9BEC229A6CD3004A8CF1 /* LaunchScreen.storyboard */,
+				9A4A9C03229A6FB9004A8CF1 /* AppDelegate */,
+				9A4A9C05229A6FE5004A8CF1 /* Assets */,
+				9A4A9C04229A6FCA004A8CF1 /* Storyboards */,
+				9A4A9C06229A7004004A8CF1 /* ViewControllers */,
 				9A4A9BEF229A6CD3004A8CF1 /* Info.plist */,
 			);
 			path = Checklists;
@@ -94,6 +93,39 @@
 				9A4A9BFA229A6CD3004A8CF1 /* Info.plist */,
 			);
 			path = ChecklistsTests;
+			sourceTree = "<group>";
+		};
+		9A4A9C03229A6FB9004A8CF1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A9BE3229A6CD2004A8CF1 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9A4A9C04229A6FCA004A8CF1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A9BE7229A6CD2004A8CF1 /* Main.storyboard */,
+				9A4A9BEC229A6CD3004A8CF1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9A4A9C05229A6FE5004A8CF1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A9BEA229A6CD3004A8CF1 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9A4A9C06229A7004004A8CF1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A9BE5229A6CD2004A8CF1 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
