@@ -15,7 +15,10 @@ class ChecklistViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // MARK: - For setting up large titles
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         let item1 = ChecklistItem()
         item1.text = "Walk the dog"
         items.append(item1)
