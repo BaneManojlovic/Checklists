@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Checklists/ViewControllers/ChecklistViewController.swift"
-            timestampString = "580565560.601536"
+            timestampString = "580572595.661283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "ChecklistViewController"
-            landmarkType = "21">
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Checklists/ViewControllers/ChecklistViewController.swift"
-            timestampString = "580565560.602008"
+            timestampString = "580572595.661738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "ChecklistViewController"
-            landmarkType = "3">
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "configureText(for:with:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
