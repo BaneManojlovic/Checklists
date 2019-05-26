@@ -40,10 +40,13 @@ class ChecklistViewController: UITableViewController {
         items.append(item5)
     }
     
-    func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
-        var isChecked = false
-        let item = items[indexPath.row]
-        
+    // MARK: - Added exta methods
+    func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
+        let label = cell.viewWithTag(1000) as! UILabel
+        label.text = item.text
+    }
+    
+    func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         if item.checked {
             cell.accessoryType = .checkmark
         } else {
@@ -63,9 +66,8 @@ extension ChecklistViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
         let item = items[indexPath.row]
-        let label = cell.viewWithTag(1000) as! UILabel
-        label.text = item.text
-        configureCheckmark(for: cell, at: indexPath)
+        configureText(for: cell, with: item)
+        configureCheckmark(for: cell, with: item)
         return cell
     }
 }
@@ -77,9 +79,8 @@ extension ChecklistViewController {
         
         if let cell = tableView.cellForRow(at: indexPath) {
           let item = items[indexPath.row]
-            item.checked = !item.checked
-            
-            configureCheckmark(for: cell, at: indexPath)
+            item.toggleChecked()
+            configureCheckmark(for: cell, with: item)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
