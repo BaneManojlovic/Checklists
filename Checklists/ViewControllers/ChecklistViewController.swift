@@ -91,6 +91,7 @@ extension ChecklistViewController {
 // MARK: - TableView delegate
 extension ChecklistViewController {
     
+    // MARK: - For toggling checkmark
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = tableView.cellForRow(at: indexPath) {
@@ -99,5 +100,12 @@ extension ChecklistViewController {
             configureCheckmark(for: cell, with: item)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - For implementing swipe-to-delete
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
     }
 }
