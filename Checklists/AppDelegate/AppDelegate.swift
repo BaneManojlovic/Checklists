@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crisp
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Crisp.initialize(websiteId: "13f8fa26-6ed1-4c01-b630-acab89763b56")
+        
         return true
     }
 
