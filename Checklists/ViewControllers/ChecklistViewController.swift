@@ -41,6 +41,11 @@ class ChecklistViewController: UITableViewController {
         item5.text = "Eat ice cream"
         item5.checked = true
         items.append(item5)
+        
+        let item6 = ChecklistItem()
+        item6.text = "Testing on the Job"
+        item6.checked = true
+        items.append(item6)
     }
     
     // MARK: - Added extra methods
