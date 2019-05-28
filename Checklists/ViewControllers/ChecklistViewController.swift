@@ -75,6 +75,10 @@ class ChecklistViewController: UITableViewController {
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
     }
+    
+    @IBAction func chatOpen(_ sender: Any) {
+        debugPrint("Chat tapped...")
+    }
 }
 
 // MARK: - TableView data source
