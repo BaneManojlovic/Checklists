@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1A639F377DB6F82B10F1A248 /* Pods_ChecklistsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A87629712441FB248BE18E2 /* Pods_ChecklistsTests.framework */; };
 		2F7A3FF262B36B34DE373106 /* Pods_Checklists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740410CC3540CBED3603595E /* Pods_Checklists.framework */; };
 		8DFA56B6229D5A4F0023E446 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA56B5229D5A4F0023E446 /* ChatViewController.swift */; };
+		8DFA56BA229D68E90023E446 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA56B9229D68E90023E446 /* ChatView.swift */; };
+		8DFA56BE229D6C480023E446 /* Crisp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFA56BD229D6C480023E446 /* Crisp.framework */; };
+		8DFA56C3229D79340023E446 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA56C2229D79340023E446 /* ChatViewModel.swift */; };
 		9A4A9BE4229A6CD2004A8CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9BE3229A6CD2004A8CF1 /* AppDelegate.swift */; };
 		9A4A9BE6229A6CD2004A8CF1 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9BE5229A6CD2004A8CF1 /* ChecklistViewController.swift */; };
 		9A4A9BE9229A6CD2004A8CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A9BE7229A6CD2004A8CF1 /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 		635750430B2C6DA698919805 /* Pods-Checklists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklists.debug.xcconfig"; path = "Target Support Files/Pods-Checklists/Pods-Checklists.debug.xcconfig"; sourceTree = "<group>"; };
 		740410CC3540CBED3603595E /* Pods_Checklists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checklists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFA56B5229D5A4F0023E446 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8DFA56B9229D68E90023E446 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		8DFA56BD229D6C480023E446 /* Crisp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Crisp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DFA56C2229D79340023E446 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		9A4A9BE0229A6CD2004A8CF1 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4A9BE3229A6CD2004A8CF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4A9BE5229A6CD2004A8CF1 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DFA56BE229D6C480023E446 /* Crisp.framework in Frameworks */,
 				2F7A3FF262B36B34DE373106 /* Pods_Checklists.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +82,7 @@
 		062040F1CDD0CC6621ADB525 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DFA56BD229D6C480023E446 /* Crisp.framework */,
 				740410CC3540CBED3603595E /* Pods_Checklists.framework */,
 				2A87629712441FB248BE18E2 /* Pods_ChecklistsTests.framework */,
 			);
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8DFA56B5229D5A4F0023E446 /* ChatViewController.swift */,
+				8DFA56B9229D68E90023E446 /* ChatView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -181,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				9A5B2F1F229AB3B4003CF0FB /* ChecklistItem.swift */,
+				8DFA56C2229D79340023E446 /* ChatViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +206,7 @@
 				9A4A9BDC229A6CD2004A8CF1 /* Sources */,
 				9A4A9BDD229A6CD2004A8CF1 /* Frameworks */,
 				9A4A9BDE229A6CD2004A8CF1 /* Resources */,
+				6DC37593DDB4549384BCB4BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +295,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6DC37593DDB4549384BCB4BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Checklists/Pods-Checklists-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Checklists/Pods-Checklists-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Checklists/Pods-Checklists-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		711FA34FAD94BF7CCAB949E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,9 +364,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4A9BE6229A6CD2004A8CF1 /* ChecklistViewController.swift in Sources */,
+				8DFA56C3229D79340023E446 /* ChatViewModel.swift in Sources */,
 				9A5B2F22229AE705003CF0FB /* AddItemViewController.swift in Sources */,
 				9A5B2F20229AB3B4003CF0FB /* ChecklistItem.swift in Sources */,
 				8DFA56B6229D5A4F0023E446 /* ChatViewController.swift in Sources */,
+				8DFA56BA229D68E90023E446 /* ChatView.swift in Sources */,
 				9A4A9BE4229A6CD2004A8CF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
