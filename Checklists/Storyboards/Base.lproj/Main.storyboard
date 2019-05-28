@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,6 +48,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Checklists" id="mry-kU-KT4">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chat_icon" id="4ig-Oh-SQO">
+                            <connections>
+                                <action selector="chatOpen:" destination="2R2-gD-FQO" id="Kag-gQ-ijD"/>
+                                <segue destination="F0T-Lw-XrR" kind="show" id="yhs-31-9Eh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mc2-Re-vFs">
                             <connections>
                                 <segue destination="HrL-xe-jZF" kind="show" id="kUM-CU-IE9"/>
@@ -57,6 +64,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZ6-i5-YaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="921" y="134"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="iLk-Xt-f46">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="F0T-Lw-XrR" customClass="ChatViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v2M-z2-Lc7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WqD-KT-ogx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" largeTitleDisplayMode="never" id="7aH-s2-yjA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="8V0-TT-Xcc">
+                            <connections>
+                                <action selector="closeChat:" destination="F0T-Lw-XrR" id="v9T-K9-jJF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ljj-5k-d35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="868"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="fVy-Ud-PE5">
@@ -143,4 +172,7 @@
             <point key="canvasLocation" x="152.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chat_icon" width="26.5" height="24.5"/>
+    </resources>
 </document>
