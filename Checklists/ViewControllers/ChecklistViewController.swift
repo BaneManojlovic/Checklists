@@ -48,6 +48,14 @@ class ChecklistViewController: UITableViewController {
         items.append(item6)
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+            let controller = segue.destination as! AddItemViewController
+            controller.delegate = self
+        }
+    }
+    
     // MARK: - Added extra methods
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
@@ -63,18 +71,18 @@ class ChecklistViewController: UITableViewController {
     }
 
     // MARK: - Action methods
-    @IBAction func addItem() {
-        debugPrint("Add button tapped ...")
-        
-        let newRowIndex = items.count
-        let item = ChecklistItem()
-        item.text = "I am a new row"
-        items.append(item)
-        
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-    }
+//    @IBAction func addItem() {
+//        debugPrint("Add button tapped ...")
+//
+//        let newRowIndex = items.count
+//        let item = ChecklistItem()
+//        item.text = "I am a new row"
+//        items.append(item)
+//
+//        let indexPath = IndexPath(row: newRowIndex, section: 0)
+//        let indexPaths = [indexPath]
+//        tableView.insertRows(at: indexPaths, with: .automatic)
+//    }
     
     @IBAction func chatOpen(_ sender: Any) {
         debugPrint("Chat tapped...")
@@ -117,4 +125,23 @@ extension ChecklistViewController {
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
+}
+
+// MARK: - Custom delegates
+extension ChecklistViewController: AddItemViewControllerDelegate {
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+        let newRowIndex = items.count
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
