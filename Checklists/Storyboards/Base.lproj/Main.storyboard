@@ -19,27 +19,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" rowHeight="55" id="hk3-fP-cFm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" rowHeight="55" id="hk3-fP-cFm">
                                 <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hk3-fP-cFm" id="riO-HF-iN0">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="54.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-xM-Wva">
-                                            <rect key="frame" x="16" y="1" width="315" height="52.5"/>
+                                            <rect key="frame" x="62" y="1" width="241" height="52.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✔️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYy-aP-Gy3">
+                                            <rect key="frame" x="16" y="1" width="42" height="52.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="HeN-MP-dM2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="DYy-aP-Gy3" firstAttribute="leading" secondItem="riO-HF-iN0" secondAttribute="leading" constant="16" id="3pd-Uy-ckl"/>
                                         <constraint firstAttribute="bottom" secondItem="bbg-xM-Wva" secondAttribute="bottom" constant="1" id="D0z-zS-xJP"/>
-                                        <constraint firstAttribute="trailing" secondItem="bbg-xM-Wva" secondAttribute="trailing" constant="4" id="QHx-uT-gYd"/>
+                                        <constraint firstAttribute="bottom" secondItem="DYy-aP-Gy3" secondAttribute="bottom" constant="1" id="OYC-i1-dWn"/>
+                                        <constraint firstItem="DYy-aP-Gy3" firstAttribute="top" secondItem="riO-HF-iN0" secondAttribute="top" constant="1" id="OYf-MP-t6L"/>
                                         <constraint firstItem="bbg-xM-Wva" firstAttribute="top" secondItem="riO-HF-iN0" secondAttribute="top" constant="1" id="T9M-vX-5fR"/>
-                                        <constraint firstItem="bbg-xM-Wva" firstAttribute="leading" secondItem="riO-HF-iN0" secondAttribute="leading" constant="16" id="ZIW-4M-Hz1"/>
+                                        <constraint firstItem="bbg-xM-Wva" firstAttribute="leading" secondItem="DYy-aP-Gy3" secondAttribute="trailing" constant="4" id="iQQ-1o-CGm"/>
+                                        <constraint firstAttribute="trailing" secondItem="bbg-xM-Wva" secondAttribute="trailing" constant="4" id="zVU-oc-FDq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="HrL-xe-jZF" kind="show" identifier="EditItem" trigger="accessoryAction" id="hw2-wK-lUf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -90,7 +105,7 @@
         <!--Add Item-->
         <scene sceneID="fVy-Ud-PE5">
             <objects>
-                <tableViewController storyboardIdentifier="AddItemViewController" id="HrL-xe-jZF" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddItemViewController" id="HrL-xe-jZF" customClass="ItemDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Mqb-iw-cJs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,4 +190,7 @@
     <resources>
         <image name="chat_icon" width="26.5" height="24.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hw2-wK-lUf"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -20,7 +20,7 @@
 		9A4A9BEE229A6CD3004A8CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A9BEC229A6CD3004A8CF1 /* LaunchScreen.storyboard */; };
 		9A4A9BF9229A6CD3004A8CF1 /* ChecklistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9BF8229A6CD3004A8CF1 /* ChecklistsTests.swift */; };
 		9A5B2F20229AB3B4003CF0FB /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B2F1F229AB3B4003CF0FB /* ChecklistItem.swift */; };
-		9A5B2F22229AE705003CF0FB /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B2F21229AE705003CF0FB /* AddItemViewController.swift */; };
+		9A5B2F22229AE705003CF0FB /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B2F21229AE705003CF0FB /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		9A4A9BF8229A6CD3004A8CF1 /* ChecklistsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsTests.swift; sourceTree = "<group>"; };
 		9A4A9BFA229A6CD3004A8CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A5B2F1F229AB3B4003CF0FB /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
-		9A5B2F21229AE705003CF0FB /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		9A5B2F21229AE705003CF0FB /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		BCFA0EF18538D524D250150B /* Pods-ChecklistsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChecklistsTests.debug.xcconfig"; path = "Target Support Files/Pods-ChecklistsTests/Pods-ChecklistsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D781523AFE644D8FEBB808FB /* Pods-Checklists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklists.release.xcconfig"; path = "Target Support Files/Pods-Checklists/Pods-Checklists.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,7 +181,7 @@
 			children = (
 				8DFA56B4229D5A2D0023E446 /* Chat */,
 				9A4A9BE5229A6CD2004A8CF1 /* ChecklistViewController.swift */,
-				9A5B2F21229AE705003CF0FB /* AddItemViewController.swift */,
+				9A5B2F21229AE705003CF0FB /* ItemDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -365,7 +365,7 @@
 			files = (
 				9A4A9BE6229A6CD2004A8CF1 /* ChecklistViewController.swift in Sources */,
 				8DFA56C3229D79340023E446 /* ChatViewModel.swift in Sources */,
-				9A5B2F22229AE705003CF0FB /* AddItemViewController.swift in Sources */,
+				9A5B2F22229AE705003CF0FB /* ItemDetailViewController.swift in Sources */,
 				9A5B2F20229AB3B4003CF0FB /* ChecklistItem.swift in Sources */,
 				8DFA56B6229D5A4F0023E446 /* ChatViewController.swift in Sources */,
 				8DFA56BA229D68E90023E446 /* ChatView.swift in Sources */,
