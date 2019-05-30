@@ -17,7 +17,7 @@ class ChecklistViewController: UITableViewController {
         super.viewDidLoad()
         
         // MARK: - For setting up large titles
-        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
         
         // MARK: - Load items from Checklists.plist file
         loadChecklistItems()

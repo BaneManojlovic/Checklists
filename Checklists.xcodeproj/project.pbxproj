@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A639F377DB6F82B10F1A248 /* Pods_ChecklistsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A87629712441FB248BE18E2 /* Pods_ChecklistsTests.framework */; };
 		2F7A3FF262B36B34DE373106 /* Pods_Checklists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740410CC3540CBED3603595E /* Pods_Checklists.framework */; };
+		8D67A34222A0018300E60FA0 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67A34122A0018300E60FA0 /* AllListsViewController.swift */; };
 		8DFA56B6229D5A4F0023E446 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA56B5229D5A4F0023E446 /* ChatViewController.swift */; };
 		8DFA56BA229D68E90023E446 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA56B9229D68E90023E446 /* ChatView.swift */; };
 		8DFA56BE229D6C480023E446 /* Crisp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFA56BD229D6C480023E446 /* Crisp.framework */; };
@@ -38,6 +39,7 @@
 		5AC4EECF53827CF289003416 /* Pods-ChecklistsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChecklistsTests.release.xcconfig"; path = "Target Support Files/Pods-ChecklistsTests/Pods-ChecklistsTests.release.xcconfig"; sourceTree = "<group>"; };
 		635750430B2C6DA698919805 /* Pods-Checklists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklists.debug.xcconfig"; path = "Target Support Files/Pods-Checklists/Pods-Checklists.debug.xcconfig"; sourceTree = "<group>"; };
 		740410CC3540CBED3603595E /* Pods_Checklists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checklists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D67A34122A0018300E60FA0 /* AllListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		8DFA56B5229D5A4F0023E446 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8DFA56B9229D68E90023E446 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		8DFA56BD229D6C480023E446 /* Crisp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Crisp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 				8DFA56B4229D5A2D0023E446 /* Chat */,
 				9A4A9BE5229A6CD2004A8CF1 /* ChecklistViewController.swift */,
 				9A5B2F21229AE705003CF0FB /* ItemDetailViewController.swift */,
+				8D67A34122A0018300E60FA0 /* AllListsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				9A5B2F20229AB3B4003CF0FB /* ChecklistItem.swift in Sources */,
 				8DFA56B6229D5A4F0023E446 /* ChatViewController.swift in Sources */,
 				8DFA56BA229D68E90023E446 /* ChatView.swift in Sources */,
+				8D67A34222A0018300E60FA0 /* AllListsViewController.swift in Sources */,
 				9A4A9BE4229A6CD2004A8CF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
