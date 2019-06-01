@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="mry-kU-KT4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mc2-Re-vFs">
                             <connections>
-                                <segue destination="HrL-xe-jZF" kind="show" id="kUM-CU-IE9"/>
+                                <segue destination="HrL-xe-jZF" kind="show" identifier="AddItem" id="kUM-CU-IE9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
