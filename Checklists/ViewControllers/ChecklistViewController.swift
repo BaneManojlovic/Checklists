@@ -12,12 +12,15 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     // MARK: - Data for data model
     var items = [ChecklistItem]()
+    var checklist: Checklist!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // MARK: - For setting up large titles
         navigationController?.navigationBar.prefersLargeTitles = true
+       // navigationItem.largeTitleDisplayMode = .never
+        title = checklist.name
         
         // MARK: - Calling method for loading of data from file in app screen
         loadChecklistItems()
