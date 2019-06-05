@@ -12,6 +12,7 @@ class ChecklistViewController: UITableViewController {
     
     // MARK: - Data for data model
     var items = [ChecklistItem]()
+    var checklist: Checklist!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class ChecklistViewController: UITableViewController {
         
         // MARK: - Load items from Checklists.plist file
         loadChecklistItems()
+        
+        title = checklist.name
         
         print("Document folder is: \(documentsDirectory())")
         print("Data file path is \(dataFilePath())")
