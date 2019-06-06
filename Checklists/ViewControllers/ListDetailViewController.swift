@@ -19,6 +19,7 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var iconImage: UIImageView!
     
     weak var delegate: ListDetailViewControllerDelegate?
     var checklistToEdit: Checklist?
@@ -67,6 +68,8 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
-    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath.section == 1 ? indexPath : nil
+    }
     
 }
