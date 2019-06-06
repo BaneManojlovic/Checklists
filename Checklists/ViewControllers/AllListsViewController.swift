@@ -11,7 +11,6 @@ import UIKit
 class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate, UINavigationControllerDelegate {
     
     let cellIdentifier = "ChecklistCell"
-  //  var lists = [Checklist]()
     var dataModel: DataModel!
 
     override func viewDidLoad() {
@@ -89,11 +88,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     }
     
     func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist) {
-//        let newRowIndex = dataModel.lists.count
-//        dataModel.lists.append(checklist)
-//        let indexPath = IndexPath(row: newRowIndex, section: 0)
-//        let indexPaths = [indexPath]
-//        tableView.insertRows(at: indexPaths, with: .automatic)
         dataModel.lists.append(checklist)
         dataModel.sortChecklists()
         tableView.reloadData()
@@ -101,12 +95,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     }
     
     func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist) {
-//        if let index = dataModel.lists.index(of: checklist) {
-//            let indexPath = IndexPath(row: index, section: 0)
-//            if let cell = tableView.cellForRow(at: indexPath) {
-//                cell.textLabel!.text = checklist.name
-//            }
-//        }
         dataModel.sortChecklists()
         tableView.reloadData()
         navigationController?.popViewController(animated: true)

@@ -11,7 +11,6 @@ import UIKit
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
     
     // MARK: - Data for data model
-  //  var items = [ChecklistItem]()
     var checklist: Checklist!
 
     override func viewDidLoad() {
