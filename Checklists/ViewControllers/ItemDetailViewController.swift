@@ -19,9 +19,12 @@ class ItemDetailViewController: UITableViewController {
     // MARK: - Outlets
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var shouldRemindSwitch: UISwitch!
+    @IBOutlet weak var dueDateLabel: UILabel!
     
     weak var delegate: ItemDetailViewControllerDelegate?
     var itemToEdit: ChecklistItem?
+    var dueDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +35,23 @@ class ItemDetailViewController: UITableViewController {
             title = "Edit Item"
             textField.text = item.text
             doneBarButton.isEnabled = true
+            shouldRemindSwitch.isOn = item.shouldRemind
+            dueDate = item.dueDate
         }
+        updateDueDateLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         textField.becomeFirstResponder()
+    }
+    
+    // MARK: - Helper methods
+    func updateDueDateLabel() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        dueDateLabel.text = formatter.string(from: dueDate)
     }
     
     // MARK: - Action methods
@@ -48,10 +62,15 @@ class ItemDetailViewController: UITableViewController {
     @IBAction func done(_ sender: Any) {
         if let item = itemToEdit {
             item.text = textField.text!
+            item.shouldRemind = shouldRemindSwitch.isOn
+            item.dueDate = dueDate
             delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             let item = ChecklistItem()
             item.text = textField.text!
+            item.checked = false
+            item.shouldRemind = shouldRemindSwitch.isOn
+            item.dueDate = dueDate
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
