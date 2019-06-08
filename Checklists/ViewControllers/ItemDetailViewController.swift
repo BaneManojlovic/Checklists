@@ -21,10 +21,14 @@ class ItemDetailViewController: UITableViewController {
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var shouldRemindSwitch: UISwitch!
     @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var datePickerCell: UITableViewCell!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
+    // MARK: - Instances
     weak var delegate: ItemDetailViewControllerDelegate?
     var itemToEdit: ChecklistItem?
     var dueDate = Date()
+    var datePickerVisible = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,25 @@ class ItemDetailViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         textField.becomeFirstResponder()
+    }
+    
+    // MARK: - For hiding date picker
+    func hideDatePicker() {
+        if datePickerVisible {
+            datePickerVisible = false
+            let indexPAthDatePicker = IndexPath(row: 2, section: 1)
+            tableView.deleteRows(at: [indexPAthDatePicker], with: .fade)
+            dueDateLabel.textColor = UIColor.black
+        }
+    }
+    
+    // MARK: - For showing date picker
+    func showDatePicker() {
+        datePickerVisible = true
+        let indexPathDatePicker = IndexPath(row: 2, section: 1)
+        tableView.insertRows(at: [indexPathDatePicker], with: .fade)
+        datePicker.setDate(dueDate, animated: false)
+        dueDateLabel.textColor = dueDateLabel.tintColor
     }
     
     // MARK: - Helper methods
@@ -74,6 +97,11 @@ class ItemDetailViewController: UITableViewController {
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
+    
+    @IBAction func dateChanged(_ datePicker: UIDatePicker) {
+        dueDate = datePicker.date
+        updateDueDateLabel()
+    }
 }
 
 // MARK: - TableView delegates
@@ -81,12 +109,66 @@ extension ItemDetailViewController {
  
     // MARK: - For preventing gray background wile selecting text input field
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
+        if indexPath.section == 1 && indexPath.row == 1 {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
+    
+    // MARK: - TableView methods for Date Picker layout
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 1 && indexPath.row == 2 {
+            return datePickerCell
+        } else {
+            return super.tableView(tableView, cellForRowAt: indexPath)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 && datePickerVisible {
+            return 3
+        } else {
+            return super.tableView(tableView, numberOfRowsInSection: section)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 && indexPath.row == 2 {
+            return 217
+        } else {
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        textField.resignFirstResponder()
+        if indexPath.section == 1 && indexPath.row == 1 {
+            if !datePickerVisible {
+                showDatePicker()
+            } else {
+                hideDatePicker()
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
+        var newIndexPath = indexPath
+        if indexPath.section == 1 && indexPath.row == 2 {
+            newIndexPath = IndexPath(row: 0, section: indexPath.section)
+        }
+        return super.tableView(tableView, indentationLevelForRowAt: newIndexPath)
     }
 }
 
 // MARK: - TextField delegates
 extension ItemDetailViewController: UITextFieldDelegate {
+    
+    // MARK: - Fro hiding date picker while editing text field
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        hideDatePicker()
+    }
     
     // MARK: - For desabling done button no navigation bar in case of empty text field
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
